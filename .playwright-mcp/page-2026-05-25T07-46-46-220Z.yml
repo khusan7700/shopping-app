@@ -1,0 +1,201 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "🛍️ ShopApp" [ref=e4] [cursor=pointer]:
+        - /url: /
+      - navigation [ref=e5]:
+        - link "상품 목록" [ref=e6] [cursor=pointer]:
+          - /url: /products
+        - link "장바구니" [ref=e7] [cursor=pointer]:
+          - /url: /cart
+      - generic [ref=e8]:
+        - link "로그인" [ref=e9] [cursor=pointer]:
+          - /url: /login
+        - link "회원가입" [ref=e10] [cursor=pointer]:
+          - /url: /register
+  - main [ref=e11]:
+    - generic [ref=e22]:
+      - heading "상품 목록" [level=1] [ref=e23]
+      - generic [ref=e24]:
+        - link "전체" [ref=e25] [cursor=pointer]:
+          - /url: /products
+        - link "상의" [ref=e26] [cursor=pointer]:
+          - /url: /products?category=%EC%83%81%EC%9D%98
+        - link "하의" [ref=e27] [cursor=pointer]:
+          - /url: /products?category=%ED%95%98%EC%9D%98
+        - link "가방" [ref=e28] [cursor=pointer]:
+          - /url: /products?category=%EA%B0%80%EB%B0%A9
+        - link "신발" [ref=e29] [cursor=pointer]:
+          - /url: /products?category=%EC%8B%A0%EB%B0%9C
+        - link "모자" [ref=e30] [cursor=pointer]:
+          - /url: /products?category=%EB%AA%A8%EC%9E%90
+        - link "액세서리" [ref=e31] [cursor=pointer]:
+          - /url: /products?category=%EC%95%A1%EC%84%B8%EC%84%9C%EB%A6%AC
+      - generic [ref=e32]:
+        - link "클래식 화이트 티셔츠 클래식 화이트 티셔츠 쿠폰적용가 36,708원 21% 29,000원 배송비 3,000원" [ref=e33] [cursor=pointer]:
+          - /url: /products/cmpkw6zas0004e49om0bcse90
+          - generic [ref=e34]:
+            - img "클래식 화이트 티셔츠" [ref=e36]
+            - generic [ref=e37]:
+              - heading "클래식 화이트 티셔츠" [level=3] [ref=e38]
+              - generic [ref=e39]:
+                - generic [ref=e40]: 쿠폰적용가
+                - generic [ref=e41]: 36,708원
+              - generic [ref=e42]:
+                - generic [ref=e43]: 21%
+                - generic [ref=e44]: 29,000원
+              - generic [ref=e45]: 배송비 3,000원
+        - link "슬림핏 청바지 슬림핏 청바지 쿠폰적용가 71,084원 17% 59,000원 무료배송 빠른배송 내일 도착 보장" [ref=e46] [cursor=pointer]:
+          - /url: /products/cmpkw6zau0005e49ocxefehpf
+          - generic [ref=e47]:
+            - img "슬림핏 청바지" [ref=e49]
+            - generic [ref=e50]:
+              - heading "슬림핏 청바지" [level=3] [ref=e51]
+              - generic [ref=e52]:
+                - generic [ref=e53]: 쿠폰적용가
+                - generic [ref=e54]: 71,084원
+              - generic [ref=e55]:
+                - generic [ref=e56]: 17%
+                - generic [ref=e57]: 59,000원
+              - generic [ref=e58]: 무료배송
+              - generic [ref=e59]:
+                - generic [ref=e60]: 빠른배송
+                - generic [ref=e61]: 내일 도착 보장
+        - link "오버핏 후드티 오버핏 후드티 쿠폰적용가 59,036원 17% 49,000원 무료배송 빠른배송 내일 도착 보장" [ref=e62] [cursor=pointer]:
+          - /url: /products/cmpkw6zau0006e49ob5z3vte7
+          - generic [ref=e63]:
+            - img "오버핏 후드티" [ref=e65]
+            - generic [ref=e66]:
+              - heading "오버핏 후드티" [level=3] [ref=e67]
+              - generic [ref=e68]:
+                - generic [ref=e69]: 쿠폰적용가
+                - generic [ref=e70]: 59,036원
+              - generic [ref=e71]:
+                - generic [ref=e72]: 17%
+                - generic [ref=e73]: 49,000원
+              - generic [ref=e74]: 무료배송
+              - generic [ref=e75]:
+                - generic [ref=e76]: 빠른배송
+                - generic [ref=e77]: 내일 도착 보장
+        - link "레더 미니백 레더 미니백 쿠폰적용가 105,952원 16% 89,000원 무료배송 빠른배송 내일 도착 보장" [ref=e78] [cursor=pointer]:
+          - /url: /products/cmpkw6zau0007e49obyh3n49u
+          - generic [ref=e79]:
+            - img "레더 미니백" [ref=e81]
+            - generic [ref=e82]:
+              - heading "레더 미니백" [level=3] [ref=e83]
+              - generic [ref=e84]:
+                - generic [ref=e85]: 쿠폰적용가
+                - generic [ref=e86]: 105,952원
+              - generic [ref=e87]:
+                - generic [ref=e88]: 16%
+                - generic [ref=e89]: 89,000원
+              - generic [ref=e90]: 무료배송
+              - generic [ref=e91]:
+                - generic [ref=e92]: 빠른배송
+                - generic [ref=e93]: 내일 도착 보장
+        - link "캔버스 스니커즈 캔버스 스니커즈 쿠폰적용가 84,146원 18% 69,000원 무료배송 빠른배송 내일 도착 보장" [ref=e94] [cursor=pointer]:
+          - /url: /products/cmpkw6zau0008e49olfcmz80a
+          - generic [ref=e95]:
+            - img "캔버스 스니커즈" [ref=e97]
+            - generic [ref=e98]:
+              - heading "캔버스 스니커즈" [level=3] [ref=e99]
+              - generic [ref=e100]:
+                - generic [ref=e101]: 쿠폰적용가
+                - generic [ref=e102]: 84,146원
+              - generic [ref=e103]:
+                - generic [ref=e104]: 18%
+                - generic [ref=e105]: 69,000원
+              - generic [ref=e106]: 무료배송
+              - generic [ref=e107]:
+                - generic [ref=e108]: 빠른배송
+                - generic [ref=e109]: 내일 도착 보장
+        - link "린넨 와이드 팬츠 린넨 와이드 팬츠 쿠폰적용가 67,901원 19% 55,000원 무료배송 빠른배송 내일 도착 보장" [ref=e110] [cursor=pointer]:
+          - /url: /products/cmpkw6zau0009e49og43txkl2
+          - generic [ref=e111]:
+            - img "린넨 와이드 팬츠" [ref=e113]
+            - generic [ref=e114]:
+              - heading "린넨 와이드 팬츠" [level=3] [ref=e115]
+              - generic [ref=e116]:
+                - generic [ref=e117]: 쿠폰적용가
+                - generic [ref=e118]: 67,901원
+              - generic [ref=e119]:
+                - generic [ref=e120]: 19%
+                - generic [ref=e121]: 55,000원
+              - generic [ref=e122]: 무료배송
+              - generic [ref=e123]:
+                - generic [ref=e124]: 빠른배송
+                - generic [ref=e125]: 내일 도착 보장
+        - link "울 가디건 울 가디건 쿠폰적용가 92,941원 15% 79,000원 무료배송 빠른배송 내일 도착 보장" [ref=e126] [cursor=pointer]:
+          - /url: /products/cmpkw6zau000ae49onftfnm8t
+          - generic [ref=e127]:
+            - img "울 가디건" [ref=e129]
+            - generic [ref=e130]:
+              - heading "울 가디건" [level=3] [ref=e131]
+              - generic [ref=e132]:
+                - generic [ref=e133]: 쿠폰적용가
+                - generic [ref=e134]: 92,941원
+              - generic [ref=e135]:
+                - generic [ref=e136]: 15%
+                - generic [ref=e137]: 79,000원
+              - generic [ref=e138]: 무료배송
+              - generic [ref=e139]:
+                - generic [ref=e140]: 빠른배송
+                - generic [ref=e141]: 내일 도착 보장
+        - link "버킷햇 버킷햇 쿠폰적용가 28,735원 13% 25,000원 배송비 3,000원" [ref=e142] [cursor=pointer]:
+          - /url: /products/cmpkw6zau000be49oimxl0mcj
+          - generic [ref=e143]:
+            - img "버킷햇" [ref=e145]
+            - generic [ref=e146]:
+              - heading "버킷햇" [level=3] [ref=e147]
+              - generic [ref=e148]:
+                - generic [ref=e149]: 쿠폰적용가
+                - generic [ref=e150]: 28,735원
+              - generic [ref=e151]:
+                - generic [ref=e152]: 13%
+                - generic [ref=e153]: 25,000원
+              - generic [ref=e154]: 배송비 3,000원
+        - link "실버 체인 목걸이 실버 체인 목걸이 쿠폰적용가 43,209원 19% 35,000원 무료배송 빠른배송 내일 도착 보장" [ref=e155] [cursor=pointer]:
+          - /url: /products/cmpkw6zau000ce49o9ii9b74x
+          - generic [ref=e156]:
+            - img "실버 체인 목걸이" [ref=e158]
+            - generic [ref=e159]:
+              - heading "실버 체인 목걸이" [level=3] [ref=e160]
+              - generic [ref=e161]:
+                - generic [ref=e162]: 쿠폰적용가
+                - generic [ref=e163]: 43,209원
+              - generic [ref=e164]:
+                - generic [ref=e165]: 19%
+                - generic [ref=e166]: 35,000원
+              - generic [ref=e167]: 무료배송
+              - generic [ref=e168]:
+                - generic [ref=e169]: 빠른배송
+                - generic [ref=e170]: 내일 도착 보장
+        - link "플리스 집업 플리스 집업 쿠폰적용가 77,380원 16% 65,000원 무료배송 빠른배송 내일 도착 보장" [ref=e171] [cursor=pointer]:
+          - /url: /products/cmpkw6zau000de49okyyvc2u1
+          - generic [ref=e172]:
+            - img "플리스 집업" [ref=e174]
+            - generic [ref=e175]:
+              - heading "플리스 집업" [level=3] [ref=e176]
+              - generic [ref=e177]:
+                - generic [ref=e178]: 쿠폰적용가
+                - generic [ref=e179]: 77,380원
+              - generic [ref=e180]:
+                - generic [ref=e181]: 16%
+                - generic [ref=e182]: 65,000원
+              - generic [ref=e183]: 무료배송
+              - generic [ref=e184]:
+                - generic [ref=e185]: 빠른배송
+                - generic [ref=e186]: 내일 도착 보장
+  - contentinfo [ref=e14]:
+    - generic [ref=e16]:
+      - paragraph [ref=e17]: © 2024 ShopApp. All rights reserved.
+      - generic [ref=e18]:
+        - link "이용약관" [ref=e19] [cursor=pointer]:
+          - /url: "#"
+        - link "개인정보처리방침" [ref=e20] [cursor=pointer]:
+          - /url: "#"
+        - link "고객센터" [ref=e21] [cursor=pointer]:
+          - /url: "#"
+  - button "Open Next.js Dev Tools" [ref=e192] [cursor=pointer]:
+    - img [ref=e193]
+  - alert [ref=e196]

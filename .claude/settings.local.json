@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(npm config get prefix)",
+      "Bash(ls \"C:/Users/Codelab/AppData/Roaming/npm/\" 2>/dev/null | head -20)",
+      "Read(//c/Users/Codelab/AppData/Roaming/npm/**)",
+      "PowerShell(npm install -g @anthropic-ai/claude-code@latest 2>&1)",
+      "PowerShell(Get-ExecutionPolicy -List)",
+      "PowerShell(Get-ExecutionPolicy)",
+      "Bash(npx tsc *)",
+      "Bash(npm run *)"
+    ]
+  }
+}

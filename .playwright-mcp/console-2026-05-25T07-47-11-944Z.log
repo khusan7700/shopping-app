@@ -1,0 +1,469 @@
+[      98ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[     112ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[   57925ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[   57956ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  241454ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  241528ms] [ERROR] ./src/app/products/loading.tsx:10:25
+the name `ProductsLoading` is defined multiple times
+   8 | import { Skeleton } from "@/components/ui/skeleton";
+   9 |
+> 10 | export default function ProductsLoading() {
+     |                         ^^^^^^^^^^^^^^^
+  11 |   return (
+  12 |     <div>
+  13 |       <Skeleton className="h-8 w-32 mb-6" />
+
+Ecmascript file had an error @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3318
+[  241529ms] [ERROR] ./src/app/products/loading.tsx:10:1
+the name `default` is exported multiple times
+   8 | import { Skeleton } from "@/components/ui/skeleton";
+   9 |
+> 10 | export default function ProductsLoading() {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 11 |   return (
+     | ^^^^^^^^^^
+> 12 |     <div>
+     | ^^^^^^^^^
+> 13 |       <Skeleton className="h-8 w-32 mb-6" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 14 |
+     | ^
+> 15 |       {/* 카테고리 필터 Skeleton */}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 16 |       <div className="flex gap-2 mb-8">
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 17 |         {Array.from({ length: 5 }).map((_, i) => (
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 18 |           <Skeleton key={i} className="h-9 w-16 rounded-full" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 19 |         ))}
+     | ^^^^^^^^^^^
+> 20 |       </div>
+     | ^^^^^^^^^^^^
+> 21 |
+     | ^
+> 22 |       {/* 상품 카드 Skeleton */}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 23 |       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 24 |         {Array.from({ length: 8 }).map((_, i) => (
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 25 |           <div
+     | ^^^^^^^^^^^^^^
+> 26 |             key={i}
+     | ^^^^^^^^^^^^^^^^^^^
+> 27 |             className="rounded-xl overflow-hidden border border-gray-100"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 28 |           >
+     | ^^^^^^^^^^^
+> 29 |             <Skeleton className="aspect-square w-full" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 30 |             <div className="p-4 space-y-2">
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 31 |               <Skeleton className="h-3 w-12" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 32 |               <Skeleton className="h-4 w-full" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 33 |               <Skeleton className="h-4 w-3/4" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 34 |               <Skeleton className="h-5 w-20" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 35 |             </div>
+     | ^^^^^^^^^^^^^^^^^^
+> 36 |           </div>
+     | ^^^^^^^^^^^^^^^^
+> 37 |         ))}
+     | ^^^^^^^^^^^
+> 38 |       </div>
+     | ^^^^^^^^^^^^
+> 39 |     </div>
+     | ^^^^^^^^^^
+> 40 |   );
+     | ^^^^
+> 41 | }
+     | ^
+  42 |
+
+Ecmascript file had an error @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3318
+[  241796ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  242199ms] [ERROR] ./src/app/products/loading.tsx:10:25
+the name `ProductsLoading` is defined multiple times
+   8 | import { Skeleton } from "@/components/ui/skeleton";
+   9 |
+> 10 | export default function ProductsLoading() {
+     |                         ^^^^^^^^^^^^^^^
+  11 |   return (
+  12 |     <div>
+  13 |       <Skeleton className="h-8 w-32 mb-6" />
+
+Ecmascript file had an error @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3318
+[  242200ms] [ERROR] ./src/app/products/loading.tsx:10:1
+the name `default` is exported multiple times
+   8 | import { Skeleton } from "@/components/ui/skeleton";
+   9 |
+> 10 | export default function ProductsLoading() {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 11 |   return (
+     | ^^^^^^^^^^
+> 12 |     <div>
+     | ^^^^^^^^^
+> 13 |       <Skeleton className="h-8 w-32 mb-6" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 14 |
+     | ^
+> 15 |       {/* 카테고리 필터 Skeleton */}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 16 |       <div className="flex gap-2 mb-8">
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 17 |         {Array.from({ length: 5 }).map((_, i) => (
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 18 |           <Skeleton key={i} className="h-9 w-16 rounded-full" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 19 |         ))}
+     | ^^^^^^^^^^^
+> 20 |       </div>
+     | ^^^^^^^^^^^^
+> 21 |
+     | ^
+> 22 |       {/* 상품 카드 Skeleton */}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 23 |       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 24 |         {Array.from({ length: 8 }).map((_, i) => (
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 25 |           <div
+     | ^^^^^^^^^^^^^^
+> 26 |             key={i}
+     | ^^^^^^^^^^^^^^^^^^^
+> 27 |             className="rounded-xl overflow-hidden border border-gray-100"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 28 |           >
+     | ^^^^^^^^^^^
+> 29 |             <Skeleton className="aspect-square w-full" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 30 |             <div className="p-4 space-y-2">
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 31 |               <Skeleton className="h-3 w-12" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 32 |               <Skeleton className="h-4 w-full" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 33 |               <Skeleton className="h-4 w-3/4" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 34 |               <Skeleton className="h-5 w-20" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 35 |             </div>
+     | ^^^^^^^^^^^^^^^^^^
+> 36 |           </div>
+     | ^^^^^^^^^^^^^^^^
+> 37 |         ))}
+     | ^^^^^^^^^^^
+> 38 |       </div>
+     | ^^^^^^^^^^^^
+> 39 |     </div>
+     | ^^^^^^^^^^
+> 40 |   );
+     | ^^^^
+> 41 | }
+     | ^
+  42 |
+
+Ecmascript file had an error @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3318
+[  242203ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/products?_rsc=w1AWEn1zHE_gILJ0:0
+[  242346ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/products?_rsc=w1AWEn1zHE_gILJ0:0
+[  242359ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  242366ms] [ERROR] ./src/app/products/loading.tsx:10:25
+the name `ProductsLoading` is defined multiple times
+   8 | import { Skeleton } from "@/components/ui/skeleton";
+   9 |
+> 10 | export default function ProductsLoading() {
+     |                         ^^^^^^^^^^^^^^^
+  11 |   return (
+  12 |     <div>
+  13 |       <Skeleton className="h-8 w-32 mb-6" />
+
+Ecmascript file had an error @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3318
+[  242367ms] [ERROR] ./src/app/products/loading.tsx:10:1
+the name `default` is exported multiple times
+   8 | import { Skeleton } from "@/components/ui/skeleton";
+   9 |
+> 10 | export default function ProductsLoading() {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 11 |   return (
+     | ^^^^^^^^^^
+> 12 |     <div>
+     | ^^^^^^^^^
+> 13 |       <Skeleton className="h-8 w-32 mb-6" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 14 |
+     | ^
+> 15 |       {/* 카테고리 필터 Skeleton */}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 16 |       <div className="flex gap-2 mb-8">
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 17 |         {Array.from({ length: 5 }).map((_, i) => (
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 18 |           <Skeleton key={i} className="h-9 w-16 rounded-full" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 19 |         ))}
+     | ^^^^^^^^^^^
+> 20 |       </div>
+     | ^^^^^^^^^^^^
+> 21 |
+     | ^
+> 22 |       {/* 상품 카드 Skeleton */}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 23 |       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 24 |         {Array.from({ length: 8 }).map((_, i) => (
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 25 |           <div
+     | ^^^^^^^^^^^^^^
+> 26 |             key={i}
+     | ^^^^^^^^^^^^^^^^^^^
+> 27 |             className="rounded-xl overflow-hidden border border-gray-100"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 28 |           >
+     | ^^^^^^^^^^^
+> 29 |             <Skeleton className="aspect-square w-full" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 30 |             <div className="p-4 space-y-2">
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 31 |               <Skeleton className="h-3 w-12" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 32 |               <Skeleton className="h-4 w-full" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 33 |               <Skeleton className="h-4 w-3/4" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 34 |               <Skeleton className="h-5 w-20" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 35 |             </div>
+     | ^^^^^^^^^^^^^^^^^^
+> 36 |           </div>
+     | ^^^^^^^^^^^^^^^^
+> 37 |         ))}
+     | ^^^^^^^^^^^
+> 38 |       </div>
+     | ^^^^^^^^^^^^
+> 39 |     </div>
+     | ^^^^^^^^^^
+> 40 |   );
+     | ^^^^
+> 41 | }
+     | ^
+  42 |
+
+Ecmascript file had an error @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3318
+[  242375ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/products:0
+[  242619ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_react-dom_0bruynb._.js:15305
+[  242714ms] Error: ./src/app/products/loading.tsx:10:25
+the name `ProductsLoading` is defined multiple times
+   8 | import { Skeleton } from "@/components/ui/skeleton";
+   9 |
+> 10 | export default function ProductsLoading() {
+     |                         ^^^^^^^^^^^^^^^
+  11 |   return (
+  12 |     <div>
+  13 |       <Skeleton className="h-8 w-32 mb-6" />
+
+Ecmascript file had an error
+
+
+    at <unknown> (Error: ./src/app/products/loading.tsx:10:25)
+    at Object.getCompilationErrors (file://C:\project\next-shopping-app\node_modules\next\dist\server\dev\hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file://C:\project\next-shopping-app\node_modules\next\dist\server\lib\dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file://C:\project\next-shopping-app\node_modules\next\dist\server\dev\next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file://C:\project\next-shopping-app\node_modules\next\dist\server\dev\next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file://C:\project\next-shopping-app\node_modules\next\dist\server\base-server.js:1753:26)
+[  242714ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1226
+[  242720ms] [ERROR] ./src/app/products/loading.tsx:10:25
+the name `ProductsLoading` is defined multiple times
+   8 | import { Skeleton } from "@/components/ui/skeleton";
+   9 |
+> 10 | export default function ProductsLoading() {
+     |                         ^^^^^^^^^^^^^^^
+  11 |   return (
+  12 |     <div>
+  13 |       <Skeleton className="h-8 w-32 mb-6" />
+
+Ecmascript file had an error @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
+[  242720ms] [ERROR] ./src/app/products/loading.tsx:10:1
+the name `default` is exported multiple times
+   8 | import { Skeleton } from "@/components/ui/skeleton";
+   9 |
+> 10 | export default function ProductsLoading() {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 11 |   return (
+     | ^^^^^^^^^^
+> 12 |     <div>
+     | ^^^^^^^^^
+> 13 |       <Skeleton className="h-8 w-32 mb-6" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 14 |
+     | ^
+> 15 |       {/* 카테고리 필터 Skeleton */}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 16 |       <div className="flex gap-2 mb-8">
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 17 |         {Array.from({ length: 5 }).map((_, i) => (
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 18 |           <Skeleton key={i} className="h-9 w-16 rounded-full" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 19 |         ))}
+     | ^^^^^^^^^^^
+> 20 |       </div>
+     | ^^^^^^^^^^^^
+> 21 |
+     | ^
+> 22 |       {/* 상품 카드 Skeleton */}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 23 |       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 24 |         {Array.from({ length: 8 }).map((_, i) => (
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 25 |           <div
+     | ^^^^^^^^^^^^^^
+> 26 |             key={i}
+     | ^^^^^^^^^^^^^^^^^^^
+> 27 |             className="rounded-xl overflow-hidden border border-gray-100"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 28 |           >
+     | ^^^^^^^^^^^
+> 29 |             <Skeleton className="aspect-square w-full" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 30 |             <div className="p-4 space-y-2">
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 31 |               <Skeleton className="h-3 w-12" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 32 |               <Skeleton className="h-4 w-full" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 33 |               <Skeleton className="h-4 w-3/4" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 34 |               <Skeleton className="h-5 w-20" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 35 |             </div>
+     | ^^^^^^^^^^^^^^^^^^
+> 36 |           </div>
+     | ^^^^^^^^^^^^^^^^
+> 37 |         ))}
+     | ^^^^^^^^^^^
+> 38 |       </div>
+     | ^^^^^^^^^^^^
+> 39 |     </div>
+     | ^^^^^^^^^^
+> 40 |   );
+     | ^^^^
+> 41 | }
+     | ^
+  42 |
+
+Ecmascript file had an error @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
+[  242838ms] [ERROR] ./src/app/products/loading.tsx:10:25
+the name `ProductsLoading` is defined multiple times
+   8 | import { Skeleton } from "@/components/ui/skeleton";
+   9 |
+> 10 | export default function ProductsLoading() {
+     |                         ^^^^^^^^^^^^^^^
+  11 |   return (
+  12 |     <div>
+  13 |       <Skeleton className="h-8 w-32 mb-6" />
+
+Ecmascript file had an error @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
+[  242838ms] [ERROR] ./src/app/products/loading.tsx:10:1
+the name `default` is exported multiple times
+   8 | import { Skeleton } from "@/components/ui/skeleton";
+   9 |
+> 10 | export default function ProductsLoading() {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 11 |   return (
+     | ^^^^^^^^^^
+> 12 |     <div>
+     | ^^^^^^^^^
+> 13 |       <Skeleton className="h-8 w-32 mb-6" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 14 |
+     | ^
+> 15 |       {/* 카테고리 필터 Skeleton */}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 16 |       <div className="flex gap-2 mb-8">
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 17 |         {Array.from({ length: 5 }).map((_, i) => (
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 18 |           <Skeleton key={i} className="h-9 w-16 rounded-full" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 19 |         ))}
+     | ^^^^^^^^^^^
+> 20 |       </div>
+     | ^^^^^^^^^^^^
+> 21 |
+     | ^
+> 22 |       {/* 상품 카드 Skeleton */}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 23 |       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 24 |         {Array.from({ length: 8 }).map((_, i) => (
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 25 |           <div
+     | ^^^^^^^^^^^^^^
+> 26 |             key={i}
+     | ^^^^^^^^^^^^^^^^^^^
+> 27 |             className="rounded-xl overflow-hidden border border-gray-100"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 28 |           >
+     | ^^^^^^^^^^^
+> 29 |             <Skeleton className="aspect-square w-full" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 30 |             <div className="p-4 space-y-2">
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 31 |               <Skeleton className="h-3 w-12" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 32 |               <Skeleton className="h-4 w-full" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 33 |               <Skeleton className="h-4 w-3/4" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 34 |               <Skeleton className="h-5 w-20" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 35 |             </div>
+     | ^^^^^^^^^^^^^^^^^^
+> 36 |           </div>
+     | ^^^^^^^^^^^^^^^^
+> 37 |         ))}
+     | ^^^^^^^^^^^
+> 38 |       </div>
+     | ^^^^^^^^^^^^
+> 39 |     </div>
+     | ^^^^^^^^^^
+> 40 |   );
+     | ^^^^
+> 41 | }
+     | ^
+  42 |
+
+Ecmascript file had an error @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
+[  242841ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1226
+[  282615ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1226
+[  282652ms] [LOG] [Fast Refresh] done in 39ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1226
+[  282792ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1226
+[  283275ms] [LOG] [Fast Refresh] done in 587ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1226
+[  283399ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  283433ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  379975ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  380850ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  380880ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  457192ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  457660ms] [LOG] [Fast Refresh] done in 537ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  457770ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  457811ms] [LOG] [Fast Refresh] done in 145ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  458037ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  458042ms] [LOG] [Fast Refresh] done in 111ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  489077ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  489104ms] [LOG] [Fast Refresh] done in 142ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  681920ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  681936ms] [LOG] [Fast Refresh] done in 120ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  940630ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  940876ms] [LOG] [Fast Refresh] done in 103ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  941095ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  941130ms] [LOG] [Fast Refresh] done in 140ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  945071ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  945091ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 1068001ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 1068022ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
