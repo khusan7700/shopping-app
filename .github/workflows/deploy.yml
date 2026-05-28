@@ -1,36 +1,36 @@
-# .github/workflows/deploy.yml
 name: CD
 
 on:
   push:
-    branches: [master]
+    branches:
+      - main
 
 jobs:
   migrate:
-    name: DB 마이그레이션
+    name: DB Migration
     runs-on: ubuntu-latest
 
     steps:
-      - name: 코드 체크아웃
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Node.js 20 설정
+      - name: Setup Node.js 20
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: "npm"
 
-      - name: 패키지 설치
+      - name: Install packages
         run: npm ci
 
-      - name: DB 마이그레이션 적용
+      - name: Apply DB migration
         run: npx prisma migrate deploy
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
           DIRECT_URL: ${{ secrets.DIRECT_URL }}
 
   deploy:
-    name: Vercel 배포
+    name: Vercel Deploy
     needs: migrate
     runs-on: ubuntu-latest
     env:
@@ -38,17 +38,17 @@ jobs:
       VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
     steps:
-      - name: 코드 체크아웃
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Vercel CLI 설치
+      - name: Install Vercel CLI
         run: npm install --global vercel@latest
 
-      - name: Vercel 환경 동기화
+      - name: Sync Vercel environment
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
-      - name: 프로덕션 빌드
+      - name: Production build
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
 
-      - name: Vercel 배포
+      - name: Deploy to Vercel
         run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
