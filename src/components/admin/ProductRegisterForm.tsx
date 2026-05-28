@@ -97,7 +97,7 @@ export function ProductRegisterForm() {
           </div>
 
           {/* 가격 / 재고 */}
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div className="space-y-1">
               <Label htmlFor="price">
                 가격 (원) <span className="text-red-500">*</span>
@@ -132,7 +132,7 @@ export function ProductRegisterForm() {
           </div>
 
           {/* 카테고리 / 이미지 URL */}
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div className="space-y-1">
               <Label htmlFor="category">카테고리</Label>
               <Input
