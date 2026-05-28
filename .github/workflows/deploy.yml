@@ -2,52 +2,53 @@
 name: CD
 
 on:
-push:
-branches:[main]
+  push:
+    branches: [master]
 
 jobs:
-migrate:
-name: DB 마이그레이션
-runs-on: ubuntu-latest
+  migrate:
+    name: DB 마이그레이션
+    runs-on: ubuntu-latest
 
-steps:
--name: 코드 체크아웃
-uses: actions/checkout@v4
+    steps:
+      - name: 코드 체크아웃
+        uses: actions/checkout@v4
 
--name: Node.js 20 설정
-uses: actions/setup-node@v4
-with:
-node-version:"20"
-cache:"npm"
+      - name: Node.js 20 설정
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
 
--name: 패키지 설치
-run: npm ci
+      - name: 패키지 설치
+        run: npm ci
 
--name: DB 마이그레이션 적용
-run: npx prisma migrate deploy
-env:
-DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      - name: DB 마이그레이션 적용
+        run: npx prisma migrate deploy
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DIRECT_URL: ${{ secrets.DIRECT_URL }}
 
-deploy:
-name: Vercel 배포
-needs: migrate
-runs-on: ubuntu-latest
-env:
-VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+  deploy:
+    name: Vercel 배포
+    needs: migrate
+    runs-on: ubuntu-latest
+    env:
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
-steps:
--name: 코드 체크아웃
-uses: actions/checkout@v4
+    steps:
+      - name: 코드 체크아웃
+        uses: actions/checkout@v4
 
--name: Vercel CLI 설치
-run: npm install --global vercel@latest
+      - name: Vercel CLI 설치
+        run: npm install --global vercel@latest
 
--name: Vercel 환경 동기화
-run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Vercel 환경 동기화
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
--name: 프로덕션 빌드
-run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+      - name: 프로덕션 빌드
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
 
--name: Vercel 배포
-run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Vercel 배포
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}

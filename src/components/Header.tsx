@@ -13,7 +13,7 @@ export async function Header() {
 
         {/* 로고 */}
         <Link href="/" className="text-lg sm:text-xl font-bold text-gray-900 shrink-0">
-          🛍️ ShopApp
+          🛍️ ShopApp2
         </Link>
 
         {/* 데스크톱 네비게이션 */}
