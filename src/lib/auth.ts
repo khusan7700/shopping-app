@@ -30,16 +30,10 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     }),
   ],
   callbacks: {
+    ...authConfig.callbacks,
     jwt({ token, user }) {
-      if (user) token.role = (user as any).role;
+      if (user) (token as any).role = (user as any).role;
       return token;
-    },
-    session({ session, token }) {
-      if (session.user) {
-        if (token.sub) session.user.id = token.sub; // ← 이 줄 추가!
-        (session.user as any).role = token.role;
-      }
-      return session;
     },
   },
 });

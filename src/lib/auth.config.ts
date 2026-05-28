@@ -15,6 +15,14 @@ const adminRoutes = ["/admin"];
 export const authConfig: NextAuthConfig = {
   pages: { signIn: "/login" },
   callbacks: {
+    // Edge Runtime(미들웨어)에서도 role 을 session 에 복원한다
+    session({ session, token }) {
+      if (session.user) {
+        if (token.sub) session.user.id = token.sub;
+        (session.user as any).role = (token as any).role;
+      }
+      return session;
+    },
     authorized({ auth, request: { nextUrl } }) {
       const isLoggedIn = !!auth?.user;
       const userRole = (auth?.user as any)?.role;

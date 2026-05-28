@@ -8,7 +8,22 @@
       "PowerShell(Get-ExecutionPolicy -List)",
       "PowerShell(Get-ExecutionPolicy)",
       "Bash(npx tsc *)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(npx shadcn@latest add dialog textarea label --yes)",
+      "Bash(grep -Hm1 ^description: 'C:\\\\Users\\\\Codelab\\\\Desktop\\\\shopping-app-pro/.claude/skills/*/SKILL.md')",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/api/admin/products)",
+      "Bash(npx playwright *)",
+      "Bash(node -e ' *)",
+      "Bash(npm install *)",
+      "Read(//tmp/**)",
+      "Bash(Get-Content *)",
+      "Bash(taskkill /F /IM node.exe)",
+      "Bash(taskkill /PID 6000 /F)",
+      "PowerShell(Stop-Process *)",
+      "PowerShell(Set-Location \"C:\\\\Users\\\\Codelab\\\\Desktop\\\\shopping-app-pro\"; Start-Process -FilePath \"npm\" -ArgumentList \"run\",\"dev\" -RedirectStandardOutput \"C:\\\\Temp\\\\dev.log\" -RedirectStandardError \"C:\\\\Temp\\\\dev-err.log\" -WindowStyle Hidden; Start-Sleep 12; $code = \\(Invoke-WebRequest -Uri \"http://localhost:3000/\" -UseBasicParsing -ErrorAction SilentlyContinue\\).StatusCode; Write-Host \"status: $code\")",
+      "PowerShell(Get-NetTCPConnection *)",
+      "PowerShell(Start-Process \"http://localhost:3000/login\")"
     ]
   }
 }

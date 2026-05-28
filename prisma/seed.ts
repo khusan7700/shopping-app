@@ -2,6 +2,7 @@ import "dotenv/config";
 import { Pool } from "pg";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "@prisma/client";
+import bcrypt from "bcryptjs";
 
 const pool = new Pool({ connectionString: process.env.DATABASE_URL });
 const adapter = new PrismaPg(pool);
@@ -9,6 +10,20 @@ const prisma = new PrismaClient({ adapter });
 
 async function main() {
   console.log("🌱 Seeding 시작...");
+
+  // ── 0. 관리자 계정 ──────────────────────────────────
+  const hashedPassword = await bcrypt.hash("admin1234", 10);
+  await prisma.user.upsert({
+    where: { email: "admin@shop.com" },
+    update: {},
+    create: {
+      email: "admin@shop.com",
+      password: hashedPassword,
+      name: "관리자",
+      role: "admin",
+    },
+  });
+  console.log("✅ 관리자 계정 생성 완료");
 
   // ── 1. 공통코드 (주문상태) ──────────────────────────
   await prisma.systemCode.createMany({
