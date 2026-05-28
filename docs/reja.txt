@@ -1,0 +1,63 @@
+
+project backgroundColor #160E4E with #07091A
+primeri text oq o'lsin.
+project hamma joyiga frame motion animatsiyasi ishlatilsin.
+projectni hamma joyini creative qilib style qil.
+ 
+ 
+ layout creative style. 
+     boshqa logo qo'yish.
+     responsiveda menu button ichiga qo'yilsin. 
+     darkmode lightmode qo'shilsin. 
+     agar mainpageda click bolib turgan bo'lsa rangi boshqacha va tagida click bo'lib turgani sezilsin. boshqa linklar boshqa rangda qolsin. 
+     장바구니 nomni o'rgniga icon yo'qib ber.
+     notification qo'sh. notificationga ham postgresql ga kerakli schema typelarni o'zing yarat va DB ga save qil.
+
+ FAQ qo'sh
+  o'zing dainamic yaratib ber.
+
+ social link
+     u sahifani faqat login foydalanuvchilar foydalansin.
+     barcha userlar bir joyga sms yozsa bo'ladigon link ham hosil qil.
+     u yerga hamma sms yoza olsin. 
+    sms field da yozuvchini img va name ko'rinsin. 
+    va real timeda bo'lsin. 
+    sms kelsa bildirgi sound bo'lsin. 
+    sms yozib jonatganda ham sound chiqsin.
+    bularni hammasini postgresql ga kerakli schema va typelar o'zing ayarat va DB ga save qil.
+
+
+ footer phoneNumber 010-7730-7215
+      email: khusan7700@gmail.com
+      andminga sms jonatish functioni
+      
+      foterga layoutdegi hamma linkni qo'shib ber.
+      footer pastgi o'ng burchakga  up arrow icon qo'shib click bo'lsa eng yuroriga borsin
+
+
+
+
+ yangi schima hosil qil product view. viewda product referens bolsin unga like bosgan odamni IDsi qo'shilsin. va like ID paydo bo'lsin. bu functiani o'zing bilib hosil qil. postgresql ga kerakli schema va typelar o'zing ayarat va DB ga save qil.
+ yangi schima hosil qil product coment. commentda product referens bolsin unga comment yozilsa odamni IDsi qo'shilsin. va comment ID paydo bo'lsin. bu functiani o'zing bilib hosil qil.postgresql ga kerakli schema va typelar o'zing ayarat va DB ga save qil.
+
+
+ product. product boxda  바로 장바구니 ga product qo'shilda bo'ladigon button hosil qil.  va like toggle button bo'lsin.
+ product. product detailga kirganda unga comment field hosil qil va unga comment yozdan userni phone va name ko'rinsin va yana yozgan commentdi edit va delete qismi bo'lsin. boshqa userlarga ko'rinsin. 
+
+ myPagega user img, userName, userEmail, userPhone, userDescription, 
+     va adminga kelgan habar qo'si bo'sin va u yerda history sms hosil qilsin. 
+     postgresql ga kerakli schema va typelar o'zing ayarat va DB ga save qil.
+
+
+
+
+
+ myPage admin.   
+     admin, img, userName, userEmail, userPhone, userDescription
+     admin. allUserImg, Name, phone, address. <button block delete active>
+     hamma userlarni qilgan oderlari va order statusi ko'rinsin. 배달 준비, 배달중, 배달 완료, 
+     myPage admin. boshqa foydalanuvchidan keladigon sms yozishma yaratib. 
+        kelgan smsga adminda javob jonatish function qo'sh. 
+        kelgan habar yerda history sms hosil qilsin. 
+        postgresql kerakli schemalar yaratib o'zing qo'sh.
+     productlarni edit qilish function qo'shib ber
