@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { ProductCard } from "./ProductCard";
 
 interface Product {
@@ -8,30 +11,53 @@ interface Product {
   stock: number;
   category: string | null;
   imageUrl: string | null;
+  _count?: { likes: number; views: number };
 }
 
 interface ProductGridProps {
   products: Product[];
+  likedProductIds?: Set<string>;
 }
 
-export function ProductGrid({ products }: ProductGridProps) {
+const container = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.07 } },
+};
+
+const cardVariant = {
+  hidden: { opacity: 0, y: 32 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" as const } },
+};
+
+export function ProductGrid({ products, likedProductIds }: ProductGridProps) {
   if (products.length === 0) {
     return (
-      <div className="text-center py-16 text-gray-400">
+      <motion.div
+        className="text-center py-16 text-muted-foreground"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+      >
         <p className="text-lg">상품이 없습니다.</p>
-      </div>
+      </motion.div>
     );
   }
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-10 md:gap-x-6 md:gap-y-12">
+    <motion.div
+      className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-10 md:gap-x-6 md:gap-y-12"
+      variants={container}
+      initial="hidden"
+      animate="show"
+    >
       {products.map((product, index) => (
-        <ProductCard
-          key={product.id}
-          product={product}
-          priority={index < 4} // 처음 4개 상품 이미지는 최우선 로딩(LCP 최적화)
-        />
+        <motion.div key={product.id} variants={cardVariant}>
+          <ProductCard
+            product={product}
+            priority={index < 4}
+            initialLiked={likedProductIds?.has(product.id) ?? false}
+          />
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 }

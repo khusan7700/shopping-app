@@ -92,6 +92,17 @@ export async function POST(request: NextRequest) {
       return newOrder;
     });
 
+    // 주문 완료 알림 생성
+    const totalFormatted = totalPrice.toLocaleString("ko-KR");
+    await prisma.notification.create({
+      data: {
+        userId: session.user!.id!,
+        type: "ORDER_PLACED",
+        title: "주문이 완료되었습니다 🎉",
+        message: `총 ${totalFormatted}원 결제가 완료되었습니다. 주문번호: ${order.id.slice(0, 8)}`,
+      },
+    });
+
     return NextResponse.json({ orderId: order.id }, { status: 201 });
   } catch (error) {
     console.error("주문 생성 실패:", error);

@@ -5,11 +5,8 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
+import { motion } from "framer-motion";
 import { productSchema, ProductFormData } from "@/schemas/product.schema";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import {
   Dialog,
   DialogContent,
@@ -18,7 +15,6 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
-// API 호출 함수 — useMutation 의 mutationFn 으로 전달
 async function createProduct(data: ProductFormData) {
   const res = await fetch("/api/admin/products", {
     method: "POST",
@@ -32,16 +28,14 @@ async function createProduct(data: ProductFormData) {
   return res.json();
 }
 
+const inputCls = "w-full bg-white/5 border border-white/10 text-white placeholder-gray-500 px-3 py-2.5 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500/50 transition-all";
+const labelCls = "text-xs font-medium text-gray-400 block mb-1.5 uppercase tracking-wide";
+
 export function ProductRegisterForm() {
   const [open, setOpen] = useState(false);
   const router = useRouter();
 
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm<ProductFormData>({
+  const { register, handleSubmit, reset, formState: { errors } } = useForm<ProductFormData>({
     resolver: zodResolver(productSchema),
   });
 
@@ -50,7 +44,7 @@ export function ProductRegisterForm() {
     onSuccess: () => {
       reset();
       setOpen(false);
-      router.refresh(); // Server Component 재실행 → 목록 자동 갱신
+      router.refresh();
     },
   });
 
@@ -62,120 +56,87 @@ export function ProductRegisterForm() {
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>
-        <Button>+ 상품 등록</Button>
+        <motion.button
+          className="glow-btn text-white text-sm font-semibold px-5 py-2.5 rounded-xl"
+          whileHover={{ scale: 1.04 }}
+          whileTap={{ scale: 0.96 }}
+        >
+          + 상품 등록
+        </motion.button>
       </DialogTrigger>
 
-      <DialogContent className="sm:max-w-lg">
+      <DialogContent className="sm:max-w-lg bg-[#1a1040] border border-white/10 text-white">
         <DialogHeader>
-          <DialogTitle>신규 상품 등록</DialogTitle>
+          <DialogTitle className="gradient-text text-lg">신규 상품 등록</DialogTitle>
         </DialogHeader>
 
-        <form
-          onSubmit={handleSubmit((data) => mutate(data))}
-          className="grid grid-cols-1 gap-4 mt-2"
-        >
-          {/* 서버 에러 */}
+        <form onSubmit={handleSubmit((data) => mutate(data))} className="grid grid-cols-1 gap-4 mt-2">
           {error && (
-            <p className="text-sm text-red-500 bg-red-50 px-3 py-2 rounded-md">
+            <p className="text-sm text-red-400 bg-red-500/10 border border-red-500/20 px-3 py-2 rounded-xl">
               {error.message}
             </p>
           )}
 
-          {/* 상품명 */}
-          <div className="space-y-1">
-            <Label htmlFor="name">
-              상품명 <span className="text-red-500">*</span>
-            </Label>
-            <Input
-              id="name"
-              {...register("name")}
-              placeholder="예) 클래식 화이트 티셔츠"
-            />
-            {errors.name && (
-              <p className="text-red-500 text-xs">{errors.name.message}</p>
-            )}
+          <div>
+            <label className={labelCls}>상품명 <span className="text-red-400">*</span></label>
+            <input {...register("name")} placeholder="예) 클래식 화이트 티셔츠" className={inputCls} />
+            {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name.message}</p>}
           </div>
 
-          {/* 가격 / 재고 */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div className="space-y-1">
-              <Label htmlFor="price">
-                가격 (원) <span className="text-red-500">*</span>
-              </Label>
-              <Input
-                id="price"
-                {...register("price", { valueAsNumber: true })}
-                type="number"
-                placeholder="29000"
-                min={1}
-              />
-              {errors.price && (
-                <p className="text-red-500 text-xs">{errors.price.message}</p>
-              )}
+          <div className="grid grid-cols-2 gap-3">
+            <div>
+              <label className={labelCls}>가격 (원) <span className="text-red-400">*</span></label>
+              <input {...register("price", { valueAsNumber: true })} type="number" placeholder="29000" min={1} className={inputCls} />
+              {errors.price && <p className="text-red-400 text-xs mt-1">{errors.price.message}</p>}
             </div>
-
-            <div className="space-y-1">
-              <Label htmlFor="stock">
-                재고 (개) <span className="text-red-500">*</span>
-              </Label>
-              <Input
-                id="stock"
-                {...register("stock", { valueAsNumber: true })}
-                type="number"
-                placeholder="100"
-                min={0}
-              />
-              {errors.stock && (
-                <p className="text-red-500 text-xs">{errors.stock.message}</p>
-              )}
+            <div>
+              <label className={labelCls}>재고 (개) <span className="text-red-400">*</span></label>
+              <input {...register("stock", { valueAsNumber: true })} type="number" placeholder="100" min={0} className={inputCls} />
+              {errors.stock && <p className="text-red-400 text-xs mt-1">{errors.stock.message}</p>}
             </div>
           </div>
 
-          {/* 카테고리 / 이미지 URL */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div className="space-y-1">
-              <Label htmlFor="category">카테고리</Label>
-              <Input
-                id="category"
-                {...register("category")}
-                placeholder="예) 상의, 하의"
-              />
+          <div className="grid grid-cols-2 gap-3">
+            <div>
+              <label className={labelCls}>카테고리</label>
+              <input {...register("category")} placeholder="예) 상의, 하의" className={inputCls} />
             </div>
-
-            <div className="space-y-1">
-              <Label htmlFor="imageUrl">이미지 경로</Label>
-              <Input
-                id="imageUrl"
-                {...register("imageUrl")}
-                placeholder="/images/products/..."
-              />
+            <div>
+              <label className={labelCls}>이미지 경로</label>
+              <input {...register("imageUrl")} placeholder="/images/..." className={inputCls} />
             </div>
           </div>
 
-          {/* 상품 설명 */}
-          <div className="space-y-1">
-            <Label htmlFor="description">상품 설명</Label>
-            <Textarea
-              id="description"
+          <div>
+            <label className={labelCls}>상품 설명</label>
+            <textarea
               {...register("description")}
               placeholder="상품에 대한 간단한 설명을 입력하세요"
               rows={3}
+              className={inputCls + " resize-none"}
             />
           </div>
 
-          {/* 액션 버튼 */}
           <div className="flex gap-3 justify-end pt-1">
-            <Button
+            <motion.button
               type="button"
-              variant="outline"
               onClick={() => handleOpenChange(false)}
               disabled={isPending}
+              className="px-4 py-2 rounded-xl text-sm border border-white/15 text-gray-300 hover:bg-white/5 transition-colors"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
             >
               취소
-            </Button>
-            <Button type="submit" disabled={isPending}>
+            </motion.button>
+            <motion.button
+              type="submit"
+              disabled={isPending}
+              className="glow-btn px-5 py-2 rounded-xl text-sm font-semibold text-white disabled:opacity-50"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+            >
               {isPending ? "등록 중..." : "등록하기"}
-            </Button>
+            </motion.button>
           </div>
         </form>
       </DialogContent>

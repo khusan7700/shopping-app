@@ -10,12 +10,13 @@ export async function register(formData: FormData) {
     email: formData.get("email") as string,
     password: formData.get("password") as string,
     name: formData.get("name") as string,
+    phone: formData.get("phone") as string,
   };
 
   const parsed = registerSchema.safeParse(raw);
   if (!parsed.success) return { error: parsed.error.issues[0].message };
 
-  const { email, password, name } = parsed.data;
+  const { email, password, name, phone } = parsed.data;
 
   const existing = await prisma.user.findUnique({ where: { email } });
   if (existing) return { error: "이미 사용 중인 이메일입니다" };
@@ -23,7 +24,7 @@ export async function register(formData: FormData) {
   const hashedPassword = await bcrypt.hash(password, 10);
 
   await prisma.user.create({
-    data: { email, password: hashedPassword, name },
+    data: { email, password: hashedPassword, name, phone: phone || null },
   });
 
   return { success: true };

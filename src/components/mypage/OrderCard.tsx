@@ -1,21 +1,20 @@
-import Image from "next/image";
+"use client";
 
-// 배송 상태별 색상 정의
+import Image from "next/image";
+import { motion } from "framer-motion";
+
 const STATUS_STYLE: Record<string, string> = {
-  PENDING: "bg-yellow-100 text-yellow-700",
-  PAID: "bg-blue-100   text-blue-700",
-  SHIPPING: "bg-purple-100 text-purple-700",
-  DONE: "bg-green-100  text-green-700",
+  PENDING: "bg-yellow-500/20 text-yellow-300",
+  PAID: "bg-blue-500/20 text-blue-300",
+  SHIPPING: "bg-purple-500/20 text-purple-300",
+  DONE: "bg-green-500/20 text-green-300",
 };
 
 interface OrderItem {
   id: string;
   quantity: number;
   price: number;
-  product: {
-    name: string;
-    imageUrl: string | null;
-  } | null;
+  product: { name: string; imageUrl: string | null } | null;
 }
 
 interface Order {
@@ -31,8 +30,7 @@ interface OrderCardProps {
 }
 
 export function OrderCard({ order }: OrderCardProps) {
-  const statusStyle =
-    STATUS_STYLE[order.status.code] ?? "bg-gray-100 text-gray-700";
+  const statusStyle = STATUS_STYLE[order.status.code] ?? "bg-white/10 text-gray-300";
   const orderDate = new Date(order.createdAt).toLocaleDateString("ko-KR", {
     year: "numeric",
     month: "long",
@@ -40,18 +38,20 @@ export function OrderCard({ order }: OrderCardProps) {
   });
 
   return (
-    <div className="border border-gray-200 rounded-xl p-5 space-y-4">
+    <motion.div
+      className="border border-white/10 bg-white/5 rounded-xl p-5 space-y-4 backdrop-blur-sm"
+      whileHover={{ borderColor: "rgba(255,255,255,0.2)", backgroundColor: "rgba(255,255,255,0.08)" }}
+      transition={{ duration: 0.2 }}
+    >
       {/* 주문 헤더 */}
       <div className="flex items-center justify-between">
         <div>
           <p className="text-xs text-gray-400">{orderDate}</p>
-          <p className="text-xs text-gray-400 font-mono mt-0.5">
+          <p className="text-xs text-gray-500 font-mono mt-0.5">
             주문번호: {order.id.slice(0, 8)}...
           </p>
         </div>
-        <span
-          className={`text-xs font-semibold px-3 py-1 rounded-full ${statusStyle}`}
-        >
+        <span className={`text-xs font-semibold px-3 py-1 rounded-full ${statusStyle}`}>
           {order.status.label}
         </span>
       </div>
@@ -60,29 +60,22 @@ export function OrderCard({ order }: OrderCardProps) {
       <div className="space-y-3">
         {order.orderItems.map((item) => (
           <div key={item.id} className="flex gap-3 items-center">
-            <div className="relative w-14 h-14 flex-shrink-0 rounded-lg overflow-hidden bg-gray-100">
+            <div className="relative w-14 h-14 flex-shrink-0 rounded-lg overflow-hidden bg-white/10">
               {item.product?.imageUrl ? (
-                <Image
-                  src={item.product.imageUrl}
-                  alt={item.product.name}
-                  fill
-                  className="object-cover"
-                />
+                <Image src={item.product.imageUrl} alt={item.product.name} fill className="object-cover" />
               ) : (
-                <div className="flex items-center justify-center h-full text-xs text-gray-400">
-                  없음
-                </div>
+                <div className="flex items-center justify-center h-full text-xs text-gray-400">없음</div>
               )}
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-medium text-gray-900 truncate">
+              <p className="text-sm font-medium truncate">
                 {item.product?.name ?? "삭제된 상품"}
               </p>
-              <p className="text-xs text-gray-500">
+              <p className="text-xs text-gray-400">
                 {item.price.toLocaleString("ko-KR")}원 × {item.quantity}개
               </p>
             </div>
-            <p className="text-sm font-bold text-gray-900 flex-shrink-0">
+            <p className="text-sm font-bold flex-shrink-0">
               {(item.price * item.quantity).toLocaleString("ko-KR")}원
             </p>
           </div>
@@ -90,12 +83,10 @@ export function OrderCard({ order }: OrderCardProps) {
       </div>
 
       {/* 총 결제금액 */}
-      <div className="border-t border-gray-100 pt-3 flex justify-between items-center">
-        <span className="text-sm text-gray-500">총 결제금액</span>
-        <span className="font-bold text-gray-900">
-          {order.totalPrice.toLocaleString("ko-KR")}원
-        </span>
+      <div className="border-t border-white/10 pt-3 flex justify-between items-center">
+        <span className="text-sm text-gray-400">총 결제금액</span>
+        <span className="font-bold">{order.totalPrice.toLocaleString("ko-KR")}원</span>
       </div>
-    </div>
+    </motion.div>
   );
 }

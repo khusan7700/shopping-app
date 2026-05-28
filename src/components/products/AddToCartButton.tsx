@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useCartStore } from "@/store/cartStore";
 
 interface Product {
@@ -9,29 +11,46 @@ interface Product {
   imageUrl: string | null;
 }
 
-interface AddToCartButtonProps {
-  product: Product;
-}
-
-export function AddToCartButton({ product }: AddToCartButtonProps) {
+export function AddToCartButton({ product }: { product: Product }) {
   const addItem = useCartStore((state) => state.addItem);
+  const [added, setAdded] = useState(false);
 
   const handleAddToCart = () => {
-    addItem({
-      id: product.id,
-      name: product.name,
-      price: product.price,
-      imageUrl: product.imageUrl,
-    });
-    alert(`"${product.name}"을(를) 장바구니에 담았습니다.`);
+    addItem({ id: product.id, name: product.name, price: product.price, imageUrl: product.imageUrl });
+    setAdded(true);
+    setTimeout(() => setAdded(false), 2000);
   };
 
   return (
-    <button
+    <motion.button
       onClick={handleAddToCart}
-      className="w-full py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-700 transition-colors font-medium text-lg"
+      className="relative w-full py-4 rounded-xl font-semibold text-base overflow-hidden glow-btn text-white"
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.97 }}
     >
-      장바구니 담기
-    </button>
+      <AnimatePresence mode="wait">
+        {added ? (
+          <motion.span
+            key="added"
+            className="flex items-center justify-center gap-2"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+          >
+            ✓ 담겼습니다!
+          </motion.span>
+        ) : (
+          <motion.span
+            key="default"
+            className="flex items-center justify-center gap-2"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+          >
+            🛒 장바구니 담기
+          </motion.span>
+        )}
+      </AnimatePresence>
+    </motion.button>
   );
 }

@@ -1,65 +1,60 @@
 "use client";
 
 import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { ShoppingCart } from "lucide-react";
 import { useCartStore } from "@/store/cartStore";
-import {
-  syncCartToDbAction,
-  getCartFromDbAction,
-} from "@/actions/cart.actions";
+import { syncCartToDbAction, getCartFromDbAction } from "@/actions/cart.actions";
 
-export function CartBadge({ userId }: { userId?: string }) {
+interface CartBadgeProps {
+  userId?: string;
+  iconOnly?: boolean;
+}
+
+export function CartBadge({ userId, iconOnly = false }: CartBadgeProps) {
   const items = useCartStore((state) => state.items);
   const totalCount = useCartStore((state) => state.totalCount());
   const setCart = useCartStore((state) => state.setCart);
-
-  // Hydration 에러 방지용 상태
   const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
-  // 최초 복원 작업이 끝났는지 추적하는 변수 (무한 루프 방지)
+  useEffect(() => { setMounted(true); }, []);
+
   const isInitialized = useRef(false);
 
   useEffect(() => {
-    // 1. 비회원이면 동기화 안 함
     if (!userId) return;
-
-    // 2. 로그인 직후 딱 한 번만 실행되는 로직 (DB에서 복원하기)
     if (!isInitialized.current) {
       getCartFromDbAction(userId).then((dbItems) => {
-        if (dbItems.length > 0 && items.length === 0) {
-          // [케이스 A] DB에 장바구니가 있고, 로컬은 비어있음
-          // → 로그아웃 후 재로그인한 경우: DB에서 복원!
-          setCart(dbItems);
-        } else if (items.length > 0) {
-          // [케이스 B] 로컬에 장바구니가 있음 (비회원 상태에서 담은 경우)
-          // → 로컬 것을 DB로 백업
-          syncCartToDbAction(userId, items);
-        }
-        // [케이스 C] 둘 다 비어있으면 아무것도 하지 않음
+        if (dbItems.length > 0 && items.length === 0) setCart(dbItems);
+        else if (items.length > 0) syncCartToDbAction(userId, items);
         isInitialized.current = true;
       });
-      return; // 첫 복원 시에는 여기서 종료
+      return;
     }
-
-    // 3. 복원이 끝난 후, 아이템이 변경될 때마다 발동되는 로직 (실시간 백업)
-    // 수량 조절, 담기, 삭제 등 Zustand 데이터가 바뀔 때마다 즉시 DB로 백업 됨!
     syncCartToDbAction(userId, items);
   }, [userId, items, setCart]);
 
   return (
     <Link
       href="/cart"
-      className="relative text-sm text-gray-600 hover:text-gray-900"
+      className="relative inline-flex items-center gap-1.5 w-8 h-8 rounded-xl glass justify-center hover:scale-110 transition-transform text-foreground"
+      title="장바구니"
     >
-      장바구니
-      {mounted && totalCount > 0 && (
-        <span className="absolute -top-2 -right-4 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center font-bold">
-          {totalCount > 9 ? "9+" : totalCount}
-        </span>
-      )}
+      <ShoppingCart size={16} />
+      <AnimatePresence>
+        {mounted && totalCount > 0 && (
+          <motion.span
+            key="badge"
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            exit={{ scale: 0 }}
+            className="absolute -top-1 -right-1 bg-gradient-to-r from-indigo-500 to-cyan-400 text-white text-[9px] font-bold rounded-full min-w-[16px] h-4 flex items-center justify-center px-1 shadow-lg shadow-indigo-500/40"
+          >
+            {totalCount > 9 ? "9+" : totalCount}
+          </motion.span>
+        )}
+      </AnimatePresence>
     </Link>
   );
 }
